@@ -32,3 +32,10 @@ export function renderBeanie(beanie) {
 
     return li;
 }
+
+export function renderAstroSign(astroSign) {
+    const option = document.createElement('option');
+    option.value = astroSign.name;
+    option.textContent = astroSign.name;
+    return option;
+}
