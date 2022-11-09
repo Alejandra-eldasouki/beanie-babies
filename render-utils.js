@@ -13,7 +13,7 @@ export function renderBeanie(beanie) {
     content.classList.add('content');
     attributes.classList.add('attributes');
 
-    img.src = beanie.img;
+    img.src = beanie.image;
     img.alt = beanie.title;
     h2.textContent = beanie.title;
     astroSign.textContent = beanie.astroSign;

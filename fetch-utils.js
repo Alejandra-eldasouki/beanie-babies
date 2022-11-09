@@ -6,7 +6,7 @@ const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 // export async functions that fetch data
 export async function getBeanies(astroSign) {
-    let query = client.from('beanie_babies').select('*').order('releasedYear').limit(100);
+    let query = client.from('beanie_babies').select('*').order('releaseYear').limit(100);
     if (astroSign) {
         query = query.eq('astroSign', astroSign);
     }

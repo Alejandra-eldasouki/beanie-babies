@@ -1,6 +1,6 @@
 /* Imports */
 import { renderAstroSign, renderBeanie } from './render-utils.js';
-import { getAstroSign, getBeanie } from './fetch-utils.js';
+import { getAstroSign, getBeanies } from './fetch-utils.js';
 
 const beanieList = document.getElementById('beanie-list');
 const form = document.getElementById('search-form');
@@ -21,13 +21,20 @@ window.addEventListener('load', async () => {
     displayBeaniesOptions();
 });
 
+async function findBeanies(astroSign) {
+    const response = await getBeanies(astroSign);
+    console.log('response', response);
+    beanies = response.data;
+    displayBeanies();
+}
+
 /* Display Functions */
 function displayBeanies() {
     beanieList.innerHTML = '';
 
     for (let beanie of beanies) {
-        const beaniesEl = renderBeanie(beanies);
-        beanieList.append(beaniesEl);
+        const beanieEl = renderBeanie(beanie);
+        beanieList.append(beanieEl);
     }
 }
 
