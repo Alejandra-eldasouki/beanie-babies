@@ -27,23 +27,32 @@
     </head>
 
     <body>
+        <div id="myDIV">
         <header>
-            <img class="logo" src="assets/beanie-baby.png" alt="logo" />
-            <h1>Beanie Babies Search</h1>
+            <img class="logo" src="assets/beanie-baby.png" alt="logo" width="200px" />
+            <h1
+            style="font-size: 3rem;
+    display: flex;
+    flex-direction: column-reverse;
+    align-content: center;
+    flex-wrap: wrap;">Beanie Babies Search</h1>
         </header>
 
         <main>
-            <section class="search">
-                <h2>Search Beanie Babies By Astrology</h2>
-                <form id="search-form">
-                    <label for="beanie-select">Select a Beanie Baby:</label>
-                    <select id="beanie-select" name="beanieSign">
-                        <option value="">All Signs</option>
-                    </select>
-                    <button type="submit" aria-label="submit-search">🔍</button>
-                </form>
-            </section>
-            <ul class="list" id="beanie-list" aria-live="polite"></ul>
+                <section class="search">
+                    <h2>Search Beanie Babies By Astrology</h2>
+                    <form id="search-form">
+                        <label for="beanie-select">Select a Beanie Baby:</label>
+                        <select id="beanie-select" name="beanieSign">
+                            <option value="">All Signs</option>
+                        </select>
+                        <button type="submit" aria-label="submit-search">🔍</button>
+                    </form>
+                </section>
+                <div id="myDIV">
+                <ul class="list" id="beanie-list" aria-live="polite"></ul>
+                </div>
+            </div>
         </main>
     </body>
 </html>
