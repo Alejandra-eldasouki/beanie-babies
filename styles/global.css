@@ -1,35 +1,108 @@
-:root {
-    --background: rgb(224, 234, 247);
-    --header-background: rgb(254, 251, 245);
-    --primary-font: Corbel, 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans',
-        'Bitstream Vera Sans', 'Liberation Sans', Verdana, 'Verdana Ref', sans-serif;
-}
-
-body {
-    font-family: var(--primary-font);
-    background: var(--background);
+main {
     display: grid;
     grid-template-rows: auto 1fr;
+    gap: 20px;
 }
 
-header {
-    position: sticky;
-    top: 0;
-    padding: 15px;
-    height: 80px;
-
+.search {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 1.5rem;
+}
+
+form {
+    display: flex;
+    font-size: 1.5rem;
+}
+
+input,
+select {
+    height: 40px;
+    widt: 175px;
+    padding: 0 5px;
+    font-size: san;
+}
+
+button {
+    height: 40px;
+    width: 40px;
+}
+
+button:hover {
+    background-color: black;
+    cursor: pointer;
+}
+
+.list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-template-rows: 175px;
     gap: 10px;
-
-    background-color: var(--header-background);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
-header .logo {
+.card {
+    height: 175px;
+    width: 400px;
+    background: lilac;
+    border: 2px solid lightgrey;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+
+    display: grid;
+    grid-template-columns: 175px 1fr;
+}
+
+.card img {
+    width: 95%;
+    height: 95%;
+    object-fit: contain;
+    align-self: center;
+    justify-self: center;
+}
+
+.content {
+    padding: 15px;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+.content h2,
+.content p {
+    margin: 0;
+}
+
+.content h2 {
+    font-size: 1.1em;
+}
+
+.attributes {
+    align-self: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.released {
+    font-size: 0.8em;
+}
+
+label {
+    align-content: flex-start;
+    padding-right: 5px;
+    padding-top: 10px;
+}
+
+:root #myDIV {
+    width: 100%;
     height: 100%;
+    background: pink;
+    animation: mymove 5s infinite;
 }
-
-main {
-    padding: 20px;
+@keyframes mymove {
+    from {
+        background-color: pink;
+    }
+    to {
+        background-color: lightblue;
+    }
 }

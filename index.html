@@ -1,39 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <!-- metadata -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-<head>
-    <!-- metadata -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <!-- title and favicon -->
+        <title>Web App</title>
+        <link rel="icon" type="image/x-icon" href="assets/alchemy-favicon.png" />
 
-    <!-- title and favicon -->
-    <title>Web App</title>
-    <link rel="icon" type="image/x-icon" href="assets/alchemy-favicon.png" />
+        <!-- js -->
+        <script
+            defer
+            src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.35.7/dist/umd/supabase.min.js"
+        ></script>
+        <script type="module" src="app.js"></script>
 
-    <!-- js -->
-    <script type="module" src="app.js"></script>
+        <!-- fonts -->
+        <!-- see https://fonts.google.com/ -->
 
-    <!-- fonts -->
-    <!-- see https://fonts.google.com/ -->
+        <!-- css -->
+        <link rel="stylesheet" href="styles/reset.css" />
+        <link rel="stylesheet" href="styles/global.css" />
+        <!-- add link for page specific css -->
+    </head>
 
-    <!-- css -->
-    <link rel="stylesheet" href="styles/reset.css" />
-    <link rel="stylesheet" href="styles/global.css" />
-    <!-- add link for page specific css -->
+    <body>
+        <div id="myDIV">
+        <header>
+            <img class="logo" src="assets/beanie-baby.png" alt="logo" width="200px" />
+            <h1
+            style="font-size: 3rem;
+    display: flex;
+    flex-direction: column-reverse;
+    align-content: center;
+    flex-wrap: wrap;">Beanie Babies Search</h1>
+        </header>
 
-</head>
-
-<body>
-    <header>
-        <img class="logo" src="assets/html_css_js.png" alt="logo">
-        <h1>Web App</h1>
-    </header>
-
-    <main>
-
-    </main>
-
-</body>
-
+        <main>
+                <section class="search">
+                    <h2>Search Beanie Babies By Astrology</h2>
+                    <form id="search-form">
+                        <label for="beanie-select">Select a Beanie Baby:</label>
+                        <select id="beanie-select" name="beanieSign">
+                            <option value="">All Signs</option>
+                        </select>
+                        <button type="submit" aria-label="submit-search">🔍</button>
+                    </form>
+                    <form id="search-name-form">
+                    <label id="beanie-name-select">Search By Name:</label>
+                    <input type="text" name="beanie-name" placeholder="Search by name">
+                    <button>🔍</button>
+                    </form>
+                </section>
+                <div id="myDIV">
+                <ul class="list" id="beanie-list" aria-live="polite"></ul>
+                </div>
+            </div>
+        </main>
+    </body>
 </html>
