@@ -18,3 +18,12 @@ export async function getAstroSigns() {
     const response = await client.from('beanie_baby_astro_signs').select('*');
     return response;
 }
+
+export async function getBeaniesByName(title) {
+    let query = client.from('beanie_babies').select('*').order('title');
+    if (title) {
+        query = query.ilike('title', `%${title}%`);
+    }
+    const response = await query;
+    return response;
+}
